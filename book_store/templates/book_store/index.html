@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}book store{% endblock %}
+
+{% block css_files %}{% endblock %}
+
+{% block content %}
+    <ul>
+    {% for book in books %}
+    <li>
+        <h2><a href="{{ book.absolute_url_slug }}">{{ book.title }}</a> Rating: {{ book.rating }}</h2>{% comment %}href="{% url "book-detail" book.id %}" OR href="{{ book.get_absolute_url_id }}"{% endcomment %}
+    </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

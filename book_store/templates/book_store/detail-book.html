@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block css_files %}{% endblock %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <h2>{{ book.author }}</h2>
+    <span>
+        <p>{{ book.rating }}
+            {% if book.is_bestseller == True%}
+                Bestseller
+            {% endif %}
+        </p>
+    </span>
+{% endblock %}
