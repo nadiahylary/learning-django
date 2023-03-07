@@ -8,7 +8,7 @@ from .models import Book
 
 
 def index(request):
-    book_list = Book.objects.all()
+    book_list = Book.objects.all().order_by("title")
     num_books = book_list.count()
     avg_rating = book_list.aggregate(Avg("rating"))
 
