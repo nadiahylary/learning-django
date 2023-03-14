@@ -65,3 +65,4 @@ class Book(models.Model):
      automatically prepopulated in the admin interface"""
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
